@@ -1,14 +1,8 @@
-/* =======================================================================
-Template Name: Youtubers
-Author:  SmartEye Technologies
-Author URI: www.smarteyeapps.com
-Version: 1.0
-coder name:Prabin Raja
-Description: This Template is created for Youtubers
-======================================================================= */
-/* ===================================== Import Less ================================== */
+/* ===================================== Impoted Fonts ================================== */
 @import url(https://fonts.googleapis.com/css?family=Montserrat:300,400,600,700);
 @import url(https://fonts.googleapis.com/css?family=Arimo:300,400,400italic,700,700italic);
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
 /* ===================================== Basic CSS ==================================== */
 * {
   margin: 0px;
@@ -363,6 +357,9 @@ header {
 .key-feature {
   padding: 50px;
   background-color: #FFF; }
+  .key-feature .row{
+    justify-content: center;
+  }
   @media screen and (max-width: 940px) {
     .key-feature {
       padding: 30px 10px; } }
@@ -414,6 +411,9 @@ header {
 /* =================== Courses Starts Here =================== */
 .cources {
   padding: 50px; }
+  .cources .row{
+    justify-content: center;
+  }
   @media screen and (max-width: 940px) {
     .cources {
       padding: 30px 10px; } }
@@ -453,6 +453,12 @@ header {
 .our-team {
   padding: 50px;
   background-color: #cccccc1c; }
+  .row.team-row{
+    justify-content: center;
+  }
+  .team-row .single-usr h4{
+    font-family: 'Poppins', sans-serif;  
+  }
   @media screen and (max-width: 940px) {
     .our-team {
       padding: 30px 10px; } }
@@ -629,3 +635,41 @@ footer {
     border-right: 0px; } }
 
 /*# sourceMappingURL=style.css.map */
+
+/* ================================= Thank You Section =====================================*/
+.thankyou {
+  text-decoration: none;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  max-width: 100%;
+  height: auto;
+
+}
+
+.thankyou .area {
+  align-content: center;
+  justify-content: center;
+  padding-top: 120px;
+  padding-bottom: 100px;
+}
+
+.thankyou h1 {
+  font-size: 20vh;
+  font-family: Monsterrat ;
+  color: #51be78;
+}
+
+.thankyou .area p {
+  font-size: 3vh;
+  font-family: Poppins ;
+  color: #212020;
+}
+
+.thankyou .area p a{
+  color: #212020;
+}
+
+.thankyou .area p a:hover {
+  color: #51be78;
+}
