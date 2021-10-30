@@ -138,23 +138,23 @@
           
             <div style="padding:20px" class="col-sm-6">
             <h2 style="font-size:20px">CONTACT FORM</h2>
-                <form action="assets/php/mail.php" method="post" >
+                <form action="javascript:sendmail()" method="post" >
                     <div class="row cont-row">
                         <div  class="col-sm-3"><label>Enter Name </label><span>:</span></div>
-                        <div class="col-sm-8"><input type="text" placeholder="Enter Name" name="name" class="form-control input-sm"  ></div>
+                        <div class="col-sm-8"><input type="text" placeholder="Enter Name" id="name" name="name" class="form-control input-sm" required ></div>
                     </div>
                     <div  class="row cont-row">
                         <div  class="col-sm-3"><label>Email Address </label><span>:</span></div>
-                        <div class="col-sm-8"><input type="text" name="email" placeholder="Enter Email Address" class="form-control input-sm"  ></div>
+                        <div class="col-sm-8"><input type="text" id="email" name="email" placeholder="Enter Email Address" class="form-control input-sm" required ></div>
                     </div>
                     <div  class="row cont-row">
                         <div  class="col-sm-3"><label>Mobile Number</label><span>:</span></div>
-                        <div class="col-sm-8"><input type="text" name="number" placeholder="Enter Mobile Number" class="form-control input-sm"  ></div>
+                        <div class="col-sm-8"><input type="text" id="number" name="number" placeholder="Enter Mobile Number" class="form-control input-sm"  ></div>
                     </div>
                     <div  class="row cont-row">
                         <div  class="col-sm-3"><label>Enter Message</label><span>:</span></div>
                         <div class="col-sm-8">
-                          <textarea rows="5" placeholder="Enter Your Message" name="msg" class="form-control input-sm"></textarea>
+                          <textarea rows="5" placeholder="Enter Your Message" id="msg" name="msg" class="form-control input-sm"></textarea>
                         </div>
                     </div>
                     <div style="margin-top:10px;" class="row">
@@ -297,6 +297,57 @@
         
         
     </body>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>    
+<script src="https://smtpjs.com/v3/smtp.js"></script>
+ 
+<script>  
+
+     function sendmail(){
+    
+			var name = $('#name').val();
+			var email = $('#email').val();
+			var number = $('#number').val();
+            var message = $('#msg').val();
+
+			// var body = $('#body').val();
+
+			var Body='Name: '+name+'<br>Email: '+email+'<br>Conatact Number: '+number+'<br>Message: '+message;
+			//console.log(name, phone, email, message);
+
+			Email.send({
+                // SecureToken:"3a847dfc-45ec-4c8f-9fbf-c9093a4b864a", //
+                Host : "smtp.gmail.com", 
+                Username : "website.shreeclasses2244@gmail.com", 
+                Password : "eiaalpzjjinqnplf", 
+				To: 'shreeclasses2244@gmail.com',
+				From: "website.shreeclasses2244@gmail.com",
+				Subject: "New Message On Website from "+name,
+				Body: Body
+			}).then(
+				message =>{
+					//console.log (message);
+					if(message=='OK'){
+					alert('Your mail has been send. Thank you for connecting.');
+					}
+					else{
+						console.error (message);
+						alert('There is error at sending message. ')
+						
+					}
+
+				}
+			);
+
+
+
+		}
+
+
+    </script>
+ </script>
+
+
 
 
     <script src="assets/js/jquery-3.2.1.min.js"></script>
