@@ -175,8 +175,9 @@ body {
   background-color: #51be78;
   border-color: #51be78; }
   .btn-success:hover {
-    background-color: #51be78 !important;
-    border-color: #51be78 !important; }
+    color: #51be78 !important;
+    border-color: #51be78 !important;
+     }
   .btn-success:active {
     background-color: #51be78 !important;
     border-color: #51be78 !important; }
