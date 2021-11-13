@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="assets/css/all.min.css">
     <link rel="stylesheet" href="assets/css/animate.css">
     <link rel="stylesheet" type="text/css" href="assets/css/style.css" />
-    <link rel="stylesheet" type="text/css" href="assets/css/slider.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/slider.css"> 
     <link rel="stylesheet" href="assets/css/popup.css">
 </head>
 
@@ -646,7 +646,11 @@
                   <p>I've done my 10 class coaching in Nilam Madam's Shree Classes. There are the best teachers. They explained my doubts in understandable language. I had a problem with Maths but now due to ma'am, it is easy to tackle it.</p>
                 </div>
               </div>
-            <div class="navigation">
+              <div class="navigation">
+                <i class="fas fa-chevron-left prev-btn"></i>
+                <i class="fas fa-chevron-right next-btn"></i>
+              </div>
+              <div class="navigation-visibility">
               <div class="rbtn active"></div> 
               <div class="rbtn"></div>
               <div class="rbtn"></div>
@@ -656,69 +660,92 @@
               <div class="rbtn"></div>
               <div class="rbtn"></div>
               <div class="rbtn"></div>
-              <div class="rbtn"></div>
-            </div>
+            </div> 
           </div>
 
     </div>
   
-      <script type="text/javascript">
-      var slides = document.querySelectorAll('.slide');
-      var btns = document.querySelectorAll('.rbtn');
-      let currentSlide = 1;
-  
-      // Javascript for image slider manual navigation
-      var manualNav = function(manual){
-        slides.forEach((slide) => {
-          slide.classList.remove('active');
-  
-          btns.forEach((btn) => {
-            btn.classList.remove('active');
+    <script type="text/javascript">
+        const slider = document.querySelector(".img-slider");
+        const nextBtn = document.querySelector(".next-btn");
+        const prevBtn = document.querySelector(".prev-btn");
+        const slides = document.querySelectorAll(".slide");
+        const slideIcons = document.querySelectorAll(".rbtn");
+        const numberOfSlides = slides.length;
+        var slideNumber = 0;
+    
+        //image slider next button
+        nextBtn.addEventListener("click", () => {
+          slides.forEach((slide) => {
+            slide.classList.remove("active");
           });
+          slideIcons.forEach((slideIcon) => {
+            slideIcon.classList.remove("active");
+          });
+    
+          slideNumber++;
+    
+          if(slideNumber > (numberOfSlides - 1)){
+            slideNumber = 0;
+          }
+    
+          slides[slideNumber].classList.add("active");
+          slideIcons[slideNumber].classList.add("active");
         });
-  
-        slides[manual].classList.add('active');
-        btns[manual].classList.add('active');
-      }
-  
-      btns.forEach((btn, i) => {
-        btn.addEventListener("click", () => {
-          manualNav(i);
-          currentSlide = i;
+    
+        //image slider previous button
+        prevBtn.addEventListener("click", () => {
+          slides.forEach((slide) => {
+            slide.classList.remove("active");
+          });
+          slideIcons.forEach((slideIcon) => {
+            slideIcon.classList.remove("active");
+          });
+    
+          slideNumber--;
+    
+          if(slideNumber < 0){
+            slideNumber = numberOfSlides - 1;
+          }
+    
+          slides[slideNumber].classList.add("active");
+          slideIcons[slideNumber].classList.add("active");
         });
-      });
-  
-      // Javascript for image slider autoplay navigation
-      var repeat = function(activeClass){
-        let active = document.getElementsByClassName('active');
-        let i = 1;
-  
+    
+        //image slider autoplay
+        var playSlider;
+    
         var repeater = () => {
-          setTimeout(function(){
-            [...active].forEach((activeSlide) => {
-              activeSlide.classList.remove('active');
+          playSlider = setInterval(function(){
+            slides.forEach((slide) => {
+              slide.classList.remove("active");
             });
-  
-          slides[i].classList.add('active');
-          btns[i].classList.add('active');
-          i++;
-  
-          if(slides.length == i){
-            i = 0;
-          }
-          if(i >= slides.length){
-            return;
-          }
-          repeater();
-        }, 15000);
+            slideIcons.forEach((slideIcon) => {
+              slideIcon.classList.remove("active");
+            });
+    
+            slideNumber++;
+    
+            if(slideNumber > (numberOfSlides - 1)){
+              slideNumber = 0;
+            }
+    
+            slides[slideNumber].classList.add("active");
+            slideIcons[slideNumber].classList.add("active");
+          }, 4000);
         }
         repeater();
-      }
-      repeat();
-      </script>      
-
-
-
+    
+        //stop the image slider autoplay on mouseover
+        slider.addEventListener("mouseover", () => {
+          clearInterval(playSlider);
+        });
+    
+        //start the image slider autoplay again on mouseout
+        slider.addEventListener("mouseout", () => {
+          repeater();
+        });
+        </script>     
 
         
     <!-- ######## Testimonials End ####### -->
