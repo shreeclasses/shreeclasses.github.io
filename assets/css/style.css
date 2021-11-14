@@ -602,9 +602,6 @@ footer {
     footer .glink ul li a {
       color: #FFF; }
   footer .tags ul li {
-    animation-name: t-bg;
-    animation-duration: 2s;
-    animation-iteration-count: infinite;
     float: left;
     padding: 8px;
     margin-right: 8px;
@@ -615,6 +612,22 @@ footer {
       animation-duration: 2s;
       animation-iteration-count: infinite;
       color: white;
+    }
+
+    footer .tags ul #ig{
+      animation-name: t-ig;
+      animation-duration: 2s;
+      animation-iteration-count: infinite;
+    }
+    footer .tags ul #fb{
+      animation-name: t-fb;
+      animation-duration: 2s;
+      animation-iteration-count: infinite;
+    }
+    footer .tags ul #yt{
+      animation-name: t-yt;
+      animation-duration: 2s;
+      animation-iteration-count: infinite;
     }
 
     @keyframes right {
@@ -631,12 +644,30 @@ footer {
       }
     }
 
-    @keyframes t-bg {
+    @keyframes t-ig {
       0%,100%{
         background-color: transparent;
       }
       50%{
-        background-color: white;
+        background-color: pink;
+      }
+    }
+
+    @keyframes t-fb {
+      0%,100%{
+        background-color: transparent;
+      }
+      50%{
+        background-color: blue;
+      }
+    }
+
+    @keyframes t-yt {
+      0%,100%{
+        background-color: transparent;
+      }
+      50%{
+        background-color: red;
       }
     }
 
@@ -645,7 +676,7 @@ footer {
         color: white;
       }
       50%{
-        color: #222;
+        color: #fff;
       }
     }
 
