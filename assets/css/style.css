@@ -59,6 +59,24 @@ p {
 .no-margin {
   margin: 0px; }
 
+.no-margin #MapAlert{
+  color: yellow;
+  display: inline;
+}
+
+@media screen and (max-width : 600px) {
+  .no-margin #MapAlert{
+    display: inline;
+  }
+  .no-margin iframe{
+    width: 100%;
+  }
+}
+
+.no-margin iframe{
+  width: 50%;
+}
+
 .hid {
   display: none; }
 
@@ -727,7 +745,7 @@ footer {
 
   header .headwe-nav .nav-div .navbar-nav .nav-item .nav-link {
     padding: 10px;
-    border-right: 0px; } }
+    border-right: 0px; }}
 
 /*# sourceMappingURL=style.css.map */
 
