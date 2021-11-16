@@ -2,6 +2,8 @@
 @import url(https://fonts.googleapis.com/css?family=Montserrat:300,400,600,700);
 @import url(https://fonts.googleapis.com/css?family=Arimo:300,400,400italic,700,700italic);
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
+
 
 /* ===================================== Basic CSS ==================================== */
 * {
@@ -714,12 +716,58 @@ footer {
 /* =================== About US Starts Here =================== */
 .about-company {
   padding: 50px;
-  background-color: #fff; }
+  background-color: #fff; 
+  justify-content: center;
+  align-items: center;
+}
+  
+  .about-company .mission-vision{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+  }
+
+  .about-company .mission-vision div{
+    border-radius: 10px;
+    padding: 5px;
+    width: 50%;
+  }
+
+  .about-company .mission-vision div h3{
+    font-weight: bold;
+  }
+
+  .about-company .founder{
+    padding: 50px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    margin-top: 30px;
+  }
+
+  .about-company .founder .founder-img{
+    width: 100rem;
+  }
+
+  .about-company .founder .founder-d h3{
+    font-family: 'Oswald', serif;
+    font-size: 32px;
+  }
+
+  .about-company .founder .founder-d h4{
+    font-family: 'Oswald', serif;
+    font-size: 25px;
+  }
+
+  .about-company .founder .founder-d p{
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+  }
   @media screen and (max-width: 940px) {
     .about-company {
       padding: 30px 10px; } }
   .about-company .detail h3 {
-    font-weight: 600;
+    font-weight: 900;
     font-size: 1.8rem; }
   .about-company .detail p {
     font-size: .84rem;
@@ -731,6 +779,17 @@ footer {
       box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
       background-color: #FFF;
       padding: 5px; }
+      .about-company .mission-vision{
+        flex-direction: column;
+      }
+      .about-company .mission-vision div{
+        width: 100%;
+        margin-top: 10px;
+      }
+
+      .about-company .founder{
+        flex-direction: column;
+      }
 
 /* ===================================== Responsive Style CSS ==================================== */
 @media screen and (max-width: 991px) {
@@ -746,6 +805,7 @@ footer {
   header .headwe-nav .nav-div .navbar-nav .nav-item .nav-link {
     padding: 10px;
     border-right: 0px; }}
+
 
 /*# sourceMappingURL=style.css.map */
 
