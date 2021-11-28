@@ -332,6 +332,9 @@ header {
 /* =================== Slider Style Starts Here =================== */
 .slider-detail {
   padding-top: 126px; }
+  .slider-detail .carousel-caption {
+    transform: translateY(-210px);
+  }
   @media screen and (max-width: 992px) {
     .slider-detail {
       padding-top: 131px; }
