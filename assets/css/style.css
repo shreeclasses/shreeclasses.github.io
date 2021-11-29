@@ -331,15 +331,42 @@ header {
 
 /* =================== Slider Style Starts Here =================== */
 .slider-detail {
-  padding-top: 126px; }
+  padding-top: 126px; } 
   .slider-detail .carousel-caption {
     transform: translateY(-180px);
-  }
-  @media screen and (max-width: 992px) {
+  } 
+
+  .slider-detail .carousel-caption h5 {
+    font-size: 3vw;
+    margin-left: -40px;
+    font-weight: 600;
+    color: #212020; }
+  .slider-detail .carousel-caption p {
+    margin-left: -40px;
+    font-weight: 600;
+    margin-top: 40px;
+    font-size: 16px;
+    color: #212020; }
+.slider-detail .vbh {
+  margin-left: -40px; }
+  .slider-detail .vbh .btn {
+    padding: 10px 30px;
+    margin-top: 40px;
+    font-weight: 600;
+    font-size: 2vw; }
+.slider-detail .vdg-cur {
+  color: #ffffff; }
+.slider-detail .fvgb {
+  color: #ffffff; }
+
+/*  @media screen and (max-width: 992px) {
     .slider-detail {
       padding-top: 131px; }
       .slider-detail .container {
         padding: 0px; } }
+        .slider-detail .carousel-caption {
+          transform: translateY(-130px);
+        }
   @media screen and (max-width: 767px) {
     .slider-detail {
       padding-top: 116px; } }
@@ -355,30 +382,34 @@ header {
         .slider-detail .carousel-caption h5 {
           font-size: 28px; } }
     @media screen and (max-width: 800px) {
+      .slider-detail .carousel-caption {
+        transform: translateY(10px);
+      }
       .slider-detail .carousel-caption h5 {
-        font-size: 18px; } }
-    .slider-detail .carousel-caption h5 {
-      font-size: 44px;
-      margin-left: -40px;
-      font-weight: 600;
-      color: #212020; }
-    .slider-detail .carousel-caption p {
-      margin-left: -40px;
-      font-weight: 600;
-      margin-top: 40px;
-      font-size: 16px;
-      color: #212020; }
-  .slider-detail .vbh {
-    margin-left: -40px; }
-    .slider-detail .vbh .btn {
-      padding: 10px 30px;
-      margin-top: 40px;
-      font-weight: 600;
-      font-size: 18px; }
-  .slider-detail .vdg-cur {
-    color: #ffffff; }
-  .slider-detail .fvgb {
-    color: #ffffff; }
+        font-size: 18px; } 
+        
+      }
+
+      @media(max-width: 775px){
+        .slider-detail .carousel-caption {
+          
+        }
+      } */
+      
+      @media screen and (max-width: 770px) {
+        .slider-detail .carousel-caption {
+          display: flex !important; 
+          flex-direction: column;
+          transform: translateY(30px);
+        }
+        .slider-detail .vbh .btn {
+          display: none;
+          padding: 10px 30px;
+          margin-top: 0;
+          font-weight: 600;
+          font-size: 2vw; }
+      }
+    
 
 /* =================== Keyfeatures Starts Here =================== */
 .key-feature {
